@@ -1,15 +1,18 @@
 let fs = require("fs");
-let input = Number(fs.readFileSync("./input.txt").toString());
+let input = fs.readFileSync("./input.txt").toString().split("\n");
+let N = parseInt(input[0]);
 
-const result = input;
+function solution(N) {
+  let cnt = 0;
+  let num = N;
 
-let count = 0;
-
-while (true) {
-  let sum = parseInt(parseInt(input / 10) + ((input % 10) % 10));
-  let num = (input % 10) * 10 + (sum % 10);
-  input = num;
-  count++;
-  if (result === num) break;
+  while (true) {
+    let sum = parseInt((num % 10) + num / 10);
+    num = (num % 10) * 10 + (sum % 10);
+    cnt++;
+    if (num === N) break;
+  }
+  return cnt;
 }
-console.log(count);
+
+console.log(solution(N));
