@@ -1,10 +1,7 @@
 let fs = require("fs");
+let input = fs.readFileSync("./index.txt").toString().split("\n");
+let num = Number(input[0].split(" ")[0]);
 
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
-
-let n = Number(input[0]);
-
-for (i = 1; i <= n; i++) {
-  let [a, b] = input[i].split(" ").map((x) => Number(x));
-  console.log(a + b);
+for (let i = 1; i <= num; i++) {
+  console.log(Number(input[i].split(" ")[0]) + Number(input[i].split(" ")[1]));
 }
