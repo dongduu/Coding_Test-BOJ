@@ -1,5 +1,5 @@
 let fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+let input = fs.readFileSync("./index.txt").toString().split("\n");
 
 let line = 0;
 
