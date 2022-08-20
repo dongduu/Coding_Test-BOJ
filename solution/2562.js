@@ -1,15 +1,15 @@
 let fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+let input = fs.readFileSync("./index.txt").toString().split("\n");
+let arr = input.map((x) => Number(x));
 
-let num = input.map((x) => Number(x));
-let max = -100000;
-let answer = "";
+let max = -1000000;
+let currNum = 0;
 
-for (let i = 0; i < num.length; i++) {
-  if (max < num[i]) {
-    max = num[i];
-    answer = num[i] + "\n" + (i + 1);
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
+    max = arr[i];
+    currNum = i + 1;
   }
 }
 
-console.log(answer);
+console.log(max + "\n" + currNum);
