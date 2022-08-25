@@ -11,3 +11,4 @@ for (let i = 0; i < score.length; i++) {
 }
 
 console.log(sum / score.length);
+8958
